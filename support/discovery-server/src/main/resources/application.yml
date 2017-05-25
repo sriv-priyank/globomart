@@ -1,0 +1,20 @@
+server.port: 8070
+
+eureka:
+    instance:
+        hostname: localhost
+    client:
+        registerWithEureka: false
+        fetchRegistry: false
+    server:
+        # Disable self-preservation during development,
+        # https://github.com/Netflix/eureka/wiki/Understanding-Eureka-Peer-to-Peer-Communication
+        enableSelfPreservation: false
+        # Set this only for this sample service without which starting the instance
+        # will by default wait for the default of 5 mins
+        waitTimeInMsWhenSyncEmpty: 0
+        # for the example, set this to zero as we will not have peers to sync up with.
+        # Do not set in a real environment with multi-node eureka clusters.
+        numberRegistrySyncRetries: 0
+        serviceUrl:
+            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

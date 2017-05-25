@@ -1,0 +1,12 @@
+rootProject.name = 'globomart'
+
+include 'api-gateway', 'discovery-server'
+
+project(':api-gateway').projectDir = file('support/api-gateway')
+project(':discovery-server').projectDir = file('support/discovery-server')
+
+
+include 'product-catalog-service', 'pricing-service'
+
+project(':product-catalog-service').projectDir = file('core/product-catalog-service')
+project(':pricing-service').projectDir = file('core/pricing-service')

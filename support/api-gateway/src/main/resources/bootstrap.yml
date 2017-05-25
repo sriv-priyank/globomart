@@ -1,0 +1,20 @@
+server.port: 8080
+
+spring:
+    application:
+        name: api-gateway
+#    cloud:
+#        config:
+#            uri: http://localhost:8090
+
+zuul:
+    ignoredServices: '*'
+    routes:
+        product-catalog-service: 
+            path: /product-catalog/**
+            serviceId: product-catalog-service
+        pricing-service: 
+            path: /pricing/**
+            serviceId: pricing-service
+
+eureka.client.serviceUrl.defaultZone: http://localhost:8070/eureka/

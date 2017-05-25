@@ -1,0 +1,42 @@
+allprojects {
+	apply plugin: 'idea'
+
+    task wrapper(type: Wrapper) {
+        gradleVersion = '3.2'
+    }
+}
+
+buildscript {
+	ext {
+		springBootVersion = '1.5.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'org.springframework.boot'
+
+	group 'com.techtraversal'
+	version '0.0.1-SNAPSHOT'
+    sourceCompatibility = 1.8
+
+	repositories {
+		mavenCentral()
+	}
+	
+	ext {
+		springCloudVersion = 'Dalston.RELEASE'
+	}
+	
+	dependencyManagement {
+		imports {
+			mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		}
+	}
+}
