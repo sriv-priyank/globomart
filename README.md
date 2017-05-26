@@ -29,16 +29,16 @@ globomart
 Microservice that provides the functionality to add a product, retrieve the list of products based on simple search criteria e.g. product type and remove a product from the catalog.
 The APIs exposed by this service are:
 ~~~
-GET		/products/							gets all products as a list
-POST 	/products/							creates a new product
-GET 	/products/name/{name}/type/{type}	gets all products with given name and type as a list 
-GET		/products/type/{type}				gets all products with given type as a list
-DELETE 	/products/{id}						deletes a product identified by the id
+GET	/products/							gets all products as a list
+POST /products/							creates a new product
+GET /products/name/{name}/type/{type}	gets all products with given name and type as a list 
+GET	/products/type/{type}				gets all products with given type as a list
+DELETE	/products/{id}					deletes a product identified by the id
 ~~~
 **Pricing Service**
 Microservice that provides the functionality to return the price for a given product. The service makes a network call to get appropriate product information from the *Product Catalog Service* and subsequenctly fetches the price. The APIs exposed by this service are:
 ~~~
-GET		/product-prices/name/{name}/type/{type}		gets the price of a product with given name and type
+GET	/product-prices/name/{name}/type/{type}		gets the price of a product with given name and type
 ~~~
 &nbsp;
 
@@ -119,5 +119,6 @@ Service unit tests are present in the respective modules.
 Rest APIs have been document using Swagger2 utility. It will generate a navigable UI once the services are up.
 ####Product Catalog Service
 Navigate to http://localhost:8080/product-catalog/swagger-ui.html
+
 ####Pricing Service
 Navigate to http://localhost:8080/pricing/swagger-ui.html

@@ -24,11 +24,6 @@ public class PricingController {
         this.service = service;
     }
 
-    @GetMapping(value = "/hello")
-    public String hello() {
-        return "Hello";
-    }
-
     @GetMapping(value = "/name/{name}/type/{type}")
     public PriceVO getProductPrice(@PathVariable final String name,
                                    @PathVariable final String type)

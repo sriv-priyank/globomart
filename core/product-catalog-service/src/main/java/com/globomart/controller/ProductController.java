@@ -22,11 +22,6 @@ public class ProductController {
         this.service = service;
     }
 
-    @GetMapping(value = "/hello")
-    public String getHello() {
-        return "Hello World";
-    }
-
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ProductVO add(@RequestBody final ProductVO product)
     {
