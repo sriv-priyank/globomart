@@ -22,7 +22,7 @@ globomart
 ~~~
 
 &nbsp;
-#### Application and Support Services
+### Application and Support Services
  - **Core**: Application services that implement the globomart business logic. We have two services both exposing ReST APIs and using an embedded instance of H2 as the datastore.
  
 **Product Catalog Service**
